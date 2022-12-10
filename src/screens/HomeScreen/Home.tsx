@@ -11,7 +11,7 @@ const Home = ({navigation}) => {
         });
       };
     const renderItems = (item, index) => {
-        item= item.item
+        item= item.item;
         return (
 
             <TouchableOpacity style={[styles.listItem, {
