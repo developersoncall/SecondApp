@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList, Image,TouchableOpacity } from 'react-
 import React from 'react'
 import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
-import {banner1} from '../../constatnts/imagePath'
+import imagePath from '../../constatnts/imagePath'
 const Home = ({navigation}) => {
    
     const onClicked = (item) => {
@@ -73,9 +73,13 @@ const Home = ({navigation}) => {
     
     return (
         <View style={styles.container}>
-            <View style={styles.borderView} />
             <View style={styles.headerView}>
-                <Text style={styles.textStyle}>Drawer</Text>
+            <SvgIcon
+                name={'logo'}
+                height={'50%'}
+                width={'50%'}
+                //onPress={() => onIconClick("plus")}
+              />
                 <View style={styles.profileIcon} />
             </View>
             <View style={styles.borderView} />
@@ -88,15 +92,15 @@ const Home = ({navigation}) => {
 
                 />
             </View>
-            <Image
-                    source={banner1} 
+            <View style={styles.catogiriesView}><Image
+                    source={imagePath.banner1} 
                     style={{
-                        width:'50%',
-                        height:'20%'
+                        width:'100%',
+                        height:200,
                     }}
-                    resizeMode={'cover'}
-                    />
-            <View >
+                    resizeMode={'contain'}
+                    /></View>
+            {/* <View >
                 <FlatList
                   showsHorizontalScrollIndicator={false}
                     data={ItemData}
@@ -116,7 +120,7 @@ const Home = ({navigation}) => {
                     renderItem={renderBlock}
 
                 />
-            </View>
+            </View> */}
         </View>
     )
 }
@@ -136,7 +140,7 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     headerView: {
-        paddingHorizontal: 15,
+        paddingHorizontal: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -165,7 +169,6 @@ const styles = StyleSheet.create({
     listItem: {
         height: 110,
         width: 80,
-
         justifyContent: 'center', alignItems: 'center'
     },
     mainListContainer: {

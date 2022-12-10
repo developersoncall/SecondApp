@@ -14,6 +14,8 @@ import Quotes from "../assets/icons/quotes.svg";
 import Shorts from "../assets/icons/shorts.svg";
 import Tee from "../assets/icons/tee.svg";
 import Watch from "../assets/icons/watch.svg";
+
+import Logo from "../assets/images/logo/logo.svg";
 const SvgIcon: FC<{
   name: string;
   height?: number;
@@ -45,6 +47,10 @@ const SvgIcon: FC<{
         case "dress":
         return (
           <Dress height={HEIGHT} width={WIDTH} fill={COLOR} onPress={onPress} />
+        );
+        case "logo":
+        return (
+          <Logo height={HEIGHT} width={WIDTH} fill={COLOR} onPress={onPress} />
         );
         case "glasses":
         return (
