@@ -53,29 +53,6 @@ const Home = ({navigation}) => {
             </TouchableOpacity>
         )
     }
-    const renderBlock = (item, index) => {
-            item = item.item;
-            return (
-                <TouchableOpacity 
-                onPress={()=>onClicked(item)}
-                style={{ backgroundColor: '#f00', marginLeft: 20,padding:10,borderRadius:10,height:100,width:250,flexDirection:'row' }}>
-                    <Image
-                    source={item.image} 
-                    style={{
-                        width:'50%',
-                        height:'100%'
-                    }}
-                    resizeMode={'cover'}
-                    />
-                    <View style={{}}>
-                    <Text style={{ fontSize: 18, color: '#000' }}>{item.name}</Text>
-                    <Text style={{ fontSize: 15, color: '#000' }}>Price: ${item.price}</Text>
-                    </View>
-                    
-                </TouchableOpacity>
-            )
-        }
-    
     return (
         <View style={styles.container}>
             <View style={styles.headerView}>
@@ -117,15 +94,6 @@ const Home = ({navigation}) => {
             </View>
             <View style={styles.headerView}>
                 <Text style={styles.textStyle}>Popular Items</Text>
-            </View>
-            <View >
-                <FlatList
-                  showsHorizontalScrollIndicator={false}
-                    data={ItemData}
-                    horizontal
-                    renderItem={renderBlock}
-
-                />
             </View> */}
         </View>
     )
