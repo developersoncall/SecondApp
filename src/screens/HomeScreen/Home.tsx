@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         paddingVertical: 5
     },
     listView:{
-    backgroundColor: '#f00', 
+    backgroundColor: '#00ff00', 
     marginLeft: 20,
     padding:10,
     borderRadius:10,

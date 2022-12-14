@@ -7,5 +7,6 @@ export default{
     shadowGrey: "#CECECEA2",
     ocean: "#CDE8E6",
     oceanSecond: "#E3E3E3",
-    green:'#00FF00'
+    green:'#00FF00',
+    blue:'#0000ff'
 }
