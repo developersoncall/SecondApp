@@ -2,9 +2,14 @@ import { StyleSheet, Text, View, FlatList, Image,TouchableOpacity } from 'react-
 import React from 'react'
 import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
-import imagePath from '../../constatnts/imagePath'
+import imagePath from '../../constatnts/imagePath';
+import Dropdown from '../../components/Dropdown';
+const fundData = [
+    { label: 'Monthly Income', value: '1' },
+    { label: 'I dont know', value: '2' },
+  ];
 const Home = ({navigation}) => {
-   
+    const [selected, setSelected] = React.useState(undefined);
     const onClicked = (item) => {
         navigation.navigate("Details", {
           data:item
@@ -100,6 +105,7 @@ const Home = ({navigation}) => {
                     }}
                     resizeMode={'contain'}
                     /></View>
+                     <Dropdown label="Select Item" data={fundData} onSelect={setSelected} />
             {/* <View >
                 <FlatList
                   showsHorizontalScrollIndicator={false}
