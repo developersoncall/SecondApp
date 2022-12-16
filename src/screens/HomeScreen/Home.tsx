@@ -3,7 +3,7 @@ import React from 'react'
 import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
 import imagePath from '../../constatnts/imagePath';
-import Dropdown from '../../components/Dropdown';
+import Card from '../../components/Card';
 const fundData = [
     { label: 'Monthly Income', value: '1' },
     { label: 'I dont know', value: '2' },
@@ -35,22 +35,11 @@ const Home = ({navigation}) => {
         )
     }
     const renderList = (item, index) => {
-        item = item.item;
+      var  dataItem = item.item;
         return (
-            <TouchableOpacity 
-            onPress={()=>onClicked(item)}
-            style={styles.listView}>
-                <Image
-                source={item.image} 
-                style={{
-                    width:'100%',
-                    height:'80%'
-                }}
-                resizeMode={'contain'}
-                />
-                <Text style={{ fontSize: 18, color: '#000' }}>{item.name}</Text>
-                <Text style={{ fontSize: 15, color: '#000' }}>Price: ${item.price}</Text>
-            </TouchableOpacity>
+            
+                   <Card data={dataItem} nav={navigation}/>
+            
         )
     }
     return (
@@ -59,7 +48,7 @@ const Home = ({navigation}) => {
             <SvgIcon
                 name={'logo'}
                 height={'50%'}
-                width={'50%'}
+                width={'25%'}
                 //onPress={() => onIconClick("plus")}
               />
                 <View style={styles.profileIcon} />
@@ -82,17 +71,17 @@ const Home = ({navigation}) => {
                     }}
                     resizeMode={'contain'}
                     /></View>
-                     <Dropdown label="Select Item" data={fundData} onSelect={setSelected} />
-            {/* <View >
+                     {/* <Dropdown label="Select Item" data={fundData} onSelect={setSelected} /> */}
+            <View >
                 <FlatList
                   showsHorizontalScrollIndicator={false}
                     data={ItemData}
                     horizontal
                     renderItem={renderList}
-
+contentContainerStyle={{paddingVertical:20}}
                 />
             </View>
-            <View style={styles.headerView}>
+            {/* <View style={styles.headerView}>
                 <Text style={styles.textStyle}>Popular Items</Text>
             </View> */}
         </View>
@@ -114,7 +103,7 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     headerView: {
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -129,7 +118,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     catogiriesView: {
-        paddingVertical: 5
     },
     listView:{
     backgroundColor: '#00ff00', 

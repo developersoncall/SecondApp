@@ -8,12 +8,14 @@ interface Props {
 }
 const Card: FC<Props> = ({ data, onSelect, nav }) => {
 
-    // const onItemPress = (item): void => {
-
-
-    // };
+    const onClicked = (item) => {
+        nav.navigate("Details", {
+          data:item
+        });
+      };
     return (
-        <TouchableOpacity style={styles.cardView} >
+        <TouchableOpacity style={styles.cardView} 
+        onPress={()=>onClicked(data)}>
             <View style={{
                 backgroundColor: '#f00',
                 position: 'absolute',
@@ -21,7 +23,7 @@ const Card: FC<Props> = ({ data, onSelect, nav }) => {
                 zIndex: 1,
                 left: 0,
                 padding: 5,
-
+                borderTopLeftRadius: 10,
                 borderBottomRightRadius: 10,
             }}>
                 <Text style={{
@@ -34,17 +36,17 @@ const Card: FC<Props> = ({ data, onSelect, nav }) => {
                 width: 120, height: 120
             }} />
             <View style={{
-                width: 120,
+                width: '100%',
             }}>
                 <Text style={{
                     fontSize: 20,
                     fontWeight: '500'
                 }}>{data.name}</Text>
                 <Text style={{
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: '800'
                 }}><Text style={{
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: '800',
 
                 }}>$</Text>{data.price}.00</Text>

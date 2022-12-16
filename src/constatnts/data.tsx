@@ -1,7 +1,7 @@
 const ItemData = [
     {
         id: 0,
-        name: 'hello',
+        name: 'Belt',
         price: 20,
         rating: "4.5",
         image:  require('../assets/images/products/belt.jpg'),
@@ -9,7 +9,7 @@ const ItemData = [
     },
     {
         id: 1,
-        name: 'hello',
+        name: 'Jacket',
         price: 20,
         rating: "4.5",
         image: require('../assets/images/products/jacket-1.jpg'),
@@ -17,7 +17,7 @@ const ItemData = [
     },
     {
         id: 2,
-        name: 'hello',
+        name: 'Jacket',
         price: 20,
         rating: "4.5",
         image:  require('../assets/images/products/jacket-2.jpg'),
