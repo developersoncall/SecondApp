@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, Image,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Image,TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
@@ -54,6 +54,7 @@ const Home = ({navigation}) => {
                 <View style={styles.profileIcon} />
             </View>
             <View style={styles.borderView} />
+            <ScrollView>
             <View style={styles.catogiriesView}>
                 <FlatList
                 showsHorizontalScrollIndicator={false}
@@ -84,6 +85,23 @@ contentContainerStyle={{paddingVertical:20}}
             {/* <View style={styles.headerView}>
                 <Text style={styles.textStyle}>Popular Items</Text>
             </View> */}
+            <View style={styles.catogiriesView}><Image
+                    source={imagePath.banner3} 
+                    style={{
+                        width:'100%',
+                        height:200,
+                    }}
+                    resizeMode={'contain'}
+                    /></View>
+                    <View style={styles.catogiriesView}><Image
+                    source={imagePath.banner2} 
+                    style={{
+                        width:'100%',
+                        height:200,
+                    }}
+                    resizeMode={'contain'}
+                    /></View>
+            </ScrollView>
         </View>
     )
 }
@@ -131,7 +149,11 @@ const styles = StyleSheet.create({
     listItem: {
         height: 110,
         width: 80,
-        justifyContent: 'center', alignItems: 'center'
+        justifyContent: 'center', alignItems: 'center',
+        shadowColor: '#000000',
+        shadowRadius: 4,
+        shadowOffset: { height: 4, width: 0 },
+        shadowOpacity: 0.5,
     },
     mainListContainer: {
         backgroundColor: '#eee',
