@@ -4,7 +4,6 @@ import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
 import imagePath from '../../constatnts/imagePath';
 import Card from '../../components/Card';
-import OfferCard from '../../components/OfferCard';
 const fundData = [
     { label: 'Monthly Income', value: '1' },
     { label: 'I dont know', value: '2' },
@@ -12,9 +11,7 @@ const fundData = [
 const Home = ({navigation}) => {
     const [selected, setSelected] = React.useState(undefined);
     const onClicked = (item) => {
-        navigation.navigate("Details", {
-          data:item
-        });
+        navigation.navigate("Profile");
       };
     const renderItems = (item, index) => {
         item= item.item;
@@ -31,7 +28,7 @@ const Home = ({navigation}) => {
                 //onPress={() => onIconClick("plus")}
               />
                 </View>
-                <Text style={{ marginTop: 10, fontWeight: "500" }}>{item.name}</Text>
+                <Text style={{ marginTop: 10, fontWeight: "500",fontFamily:'Eczar-Bold' }}>{item.name}</Text>
             </TouchableOpacity>
         )
     }
@@ -39,7 +36,7 @@ const Home = ({navigation}) => {
       var  dataItem = item.item;
         return (
             
-                   <OfferCard data={dataItem} nav={navigation}/>
+                   <Card data={dataItem} nav={navigation}/>
             
         )
     }
@@ -52,7 +49,7 @@ const Home = ({navigation}) => {
                 width={'25%'}
                 //onPress={() => onIconClick("plus")}
               />
-                <View style={styles.profileIcon} />
+                <TouchableOpacity style={styles.profileIcon} onPress={()=>onClicked()} />
             </View>
             <View style={styles.borderView} />
             <ScrollView>
