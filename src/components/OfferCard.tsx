@@ -16,7 +16,8 @@ const OfferCard: FC<Props> = ({ data, onSelect, nav }) => {
       };
     return (
         <TouchableOpacity style={styles.cardView} 
-        onPress={()=>onClicked(data)}>
+        //onPress={()=>onClicked(data)}
+        >
             <View style={{
                 backgroundColor: '#f00',
                 position: 'absolute',
@@ -34,31 +35,26 @@ const OfferCard: FC<Props> = ({ data, onSelect, nav }) => {
                 }}>New</Text>
             </View>
             <Image source={data.image} style={{
-                width: 120, height: 120
+                width: 80, height: 80
             }} />
             <View style={{
-                width: '100%',
+                width: '50%',
+                height:50,
             }}>
                 <Text style={{
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: '500',
                     color:colors.black
                 }}>{data.name}</Text>
                 <Text style={{
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: '800'
                 }}><Text style={{
                     fontSize: 12,
                     fontWeight: '800',
 
                 }}>$</Text>{data.price}.00</Text>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={{
-                        fontSize: 18,
-                        fontWeight: '900',
-                        color: '#fff'
-                    }}>Order</Text>
-                </TouchableOpacity>
+              
             </View>
 
         </TouchableOpacity>
@@ -68,12 +64,14 @@ const OfferCard: FC<Props> = ({ data, onSelect, nav }) => {
 const styles = StyleSheet.create({
     cardView: {
         alignItems: 'center',
-        padding: 10,
+        padding: 15,
         // height: 40,
+        width:'60%',
         zIndex: 1,
+        flexDirection:'row',
         borderBottomColor: '#bbb',
         borderBottomWidth: 2,
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         marginLeft: 20,
         borderRadius: 10,
         shadowColor: '#000000',
@@ -84,9 +82,8 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#033',
-        height: 35,
+        height: 30,
         borderRadius: 20,
-        marginVertical: 5,
         justifyContent: 'center',
         alignItems: 'center'
     },
