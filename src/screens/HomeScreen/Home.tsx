@@ -4,6 +4,7 @@ import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
 import imagePath from '../../constatnts/imagePath';
 import Card from '../../components/Card';
+import OfferCard from '../../components/OfferCard';
 const fundData = [
     { label: 'Monthly Income', value: '1' },
     { label: 'I dont know', value: '2' },
@@ -38,7 +39,7 @@ const Home = ({navigation}) => {
       var  dataItem = item.item;
         return (
             
-                   <Card data={dataItem} nav={navigation}/>
+                   <OfferCard data={dataItem} nav={navigation}/>
             
         )
     }

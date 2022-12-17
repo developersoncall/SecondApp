@@ -7,7 +7,7 @@ interface Props {
     nav: any;
     onSelect: (item: { label: string; value: string }) => void;
 }
-const Card: FC<Props> = ({ data, onSelect, nav }) => {
+const OfferCard: FC<Props> = ({ data, onSelect, nav }) => {
 
     const onClicked = (item) => {
         nav.navigate("Details", {
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Card;
+export default OfferCard;
