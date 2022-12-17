@@ -6,4 +6,5 @@ export default{
     newslwttwe: require('../assets/images/newsletter.png'),
     payment: require('../assets/images/payment.png'),
     banner5: require('../assets/images/cta-banner.jpg'),
+    profilePhoto: require('../assets/images/testimonial-1.jpg')
 }

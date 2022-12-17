@@ -11,51 +11,72 @@ const Profile = ({ navigation }) => {
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.headerView}>
-          <TouchableOpacity style={styles.profileIcon} />
-          <Text style={{ marginTop: 10, fontWeight: "800", fontSize: 20 }}>Anuj Sharma</Text>
-          <Text style={{ marginTop: 5, fontWeight: "500", }}>anujshrki@gmail.com</Text>
+          <TouchableOpacity style={styles.profileIcon}><Image
+                    source={imagePath.profilePhoto} 
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        borderRadius:100
+                    }}
+                    resizeMode={'contain'}
+                    /></TouchableOpacity>
+          <Text style={{ marginTop: 10, fontWeight: "800", fontSize: 20 }}>Username</Text>
+          <Text style={{ marginTop: 5,marginBottom:20, fontWeight: "500", }}>developersoncall@gmail.com</Text>
         </View>
         <View style={{ width: '100%', alignItems: 'center' }}>
           <TouchableOpacity style={{ 
-            backgroundColor: colors.shadowGrey,
-             width: '80%',
-             flexDirection: 'row',
-             justifyContent: 'space-between',
-             alignItems: 'center',
-             padding:10,borderRadius:20,
-             borderColor: colors.blue,
-             borderWidth: 2,
-             paddingHorizontal:20
+             backgroundColor: colors.white,
+             width: '85%',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding:10,borderRadius:20,
+              borderColor: colors.shadowGrey,
+              borderWidth: 1,
+              marginTop:20,
+              paddingHorizontal:20,
+              shadowColor: '#000000',
+              shadowRadius: 4,
+              shadowOffset: { height: 4, width: 0 },
+              shadowOpacity: 0.5,
              }}>
             <Text style={{ fontWeight: "600", fontSize: 18 }}>My Order</Text>
             <Text style={{ fontWeight: "600", }}>></Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ 
-            backgroundColor: colors.shadowGrey,
-             width: '80%',
+            backgroundColor: colors.white,
+            width: '85%',
              flexDirection: 'row',
              justifyContent: 'space-between',
              alignItems: 'center',
              padding:10,borderRadius:20,
-             borderColor: colors.blue,
-             borderWidth: 2,
+             borderColor: colors.shadowGrey,
+             borderWidth: 1,
              marginTop:20,
-             paddingHorizontal:20
+             paddingHorizontal:20,
+             shadowColor: '#000000',
+             shadowRadius: 4,
+             shadowOffset: { height: 4, width: 0 },
+             shadowOpacity: 0.5,
              }}>
             <Text style={{ fontWeight: "600", fontSize: 18 }}>Settings</Text>
             <Text style={{ fontWeight: "600", }}>></Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ 
-            backgroundColor: colors.shadowGrey,
-             width: '80%',
+            backgroundColor: colors.white,
+            width: '85%',
              flexDirection: 'row',
              justifyContent: 'space-between',
              alignItems: 'center',
              padding:10,borderRadius:20,
-             borderColor: colors.blue,
-             borderWidth: 2,
+             borderColor: colors.shadowGrey,
+             borderWidth: 1,
              marginTop:20,
-             paddingHorizontal:20
+             paddingHorizontal:20,
+             shadowColor: '#000000',
+             shadowRadius: 4,
+             shadowOffset: { height: 4, width: 0 },
+             shadowOpacity: 0.5,
              }}>
             <Text style={{ fontWeight: "600", fontSize: 18 }}>LogOut</Text>
             <Text style={{ fontWeight: "600", }}>></Text>
@@ -63,7 +84,7 @@ const Profile = ({ navigation }) => {
         </View>
       </ScrollView>
       <Text style={{ fontWeight: "600", fontSize: 16 ,color:'#bbb',textAlign:'center',marginBottom:5}}>version 1.2.4</Text>
-      <Text style={{ fontWeight: "600", fontSize: 12 ,color:'#bbb',textAlign:'center',marginBottom:20}}>Made with ❤️ in Bengaluru</Text>
+      <Text style={{ fontWeight: "600", fontSize: 12 ,color:'#bbb',textAlign:'center',marginBottom:20}}>Made with ❤️ in Bengaluru by <Text style={{ fontWeight: "600", fontSize: 12 ,color:colors.blue,textAlign:'center',marginBottom:20}}>Anuj Sharma</Text></Text>
       
     </View>
   )
@@ -80,9 +101,9 @@ const styles = StyleSheet.create({
 
   headerView: {
     paddingHorizontal: 20,
-    justifyContent: 'center',
+    justifyContent:'flex-end',
     alignItems: 'center',
-    height: 300
+    height: 250,
   },
   profileIcon: {
     width: 120,
@@ -92,7 +113,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: colors.blue,
-    borderWidth: 2
+    borderWidth: 2,
+    //overflow:'hidden',
+    shadowColor: '#000000',
+              shadowRadius: 4,
+              shadowOffset: { height: 4, width: 0 },
+              shadowOpacity: 0.5,
   },
   textStyle: {
     fontSize: 20,
