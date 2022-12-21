@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     cardView: {
         alignItems: 'center',
         padding: 10,
-        // height: 40,
         zIndex: 1,
         borderBottomColor: '#bbb',
         borderBottomWidth: 2,
@@ -106,7 +105,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 10,
         borderBottomWidth: 1,
-        //backgroundColor:'#f00',
         marginHorizontal: 15
     },
 });
