@@ -4,6 +4,7 @@ import SvgIcon from '../../components/SvgIcon'
 import { ItemData ,cat} from '../../constatnts/data'
 import imagePath from '../../constatnts/imagePath';
 import Card from '../../components/Card';
+import Dropdown from '../../components/Dropdown';
 const fundData = [
     { label: 'Monthly Income', value: '1' },
     { label: 'I dont know', value: '2' },
@@ -70,7 +71,11 @@ const Home = ({navigation}) => {
                     }}
                     resizeMode={'contain'}
                     /></View>
-                     {/* <Dropdown label="Select Item" data={fundData} onSelect={setSelected} /> */}
+                   <DropDown label="Select Product" data={fundData} 
+                   onSelect={(item) => setProductValue(item.label)} 
+                   customStyles={styles.dropDownStyles}
+                   modalStyle={styles.dropDownItemStyles}
+                 />
             <View >
                 <FlatList
                   showsHorizontalScrollIndicator={false}
