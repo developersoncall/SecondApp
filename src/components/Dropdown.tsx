@@ -1,12 +1,14 @@
 import React, { FC, useState, useRef } from 'react';
-import { StyleSheet, Text, TouchableOpacity, Modal, FlatList, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Modal, FlatList, View ,Image} from 'react-native';
 
 interface Props {
     label: string;
     data: Array<{ label: string; value: string }>;
     onSelect: (item: { label: string; value: string }) => void;
+    customStyle: StyleSheet;
+    modalStyle: StyleSheet;
 }
-const Dropdown: FC<Props> = ({ label,data,onSelect }) => {
+const Dropdown: FC<Props> = ({ label, data, onSelect, customStyles, modalStyle }) => {
     const [visible, setVisible] = useState(false);
     const DropdownButton = useRef();
     const [dropdownTop, setDropdownTop] = useState(0);
@@ -38,7 +40,13 @@ const Dropdown: FC<Props> = ({ label,data,onSelect }) => {
                     style={styles.overlay}
                     onPress={() => setVisible(false)}
                 >
-                    <View style={[styles.dropdown, { top: dropdownTop }]}>
+                    <View style={modalStyle ? [modalStyle, {
+                        top: dropdownTop,
+                        position: 'absolute',
+                    }] : [styles.dropdown, {
+                        top: dropdownTop,
+                        position: 'absolute',
+                    }]}>
                         <FlatList
                             data={data}
                             renderItem={renderItem}
@@ -53,14 +61,14 @@ const Dropdown: FC<Props> = ({ label,data,onSelect }) => {
     return (
         <TouchableOpacity
             ref={DropdownButton}
-            style={styles.button}
+            style={customStyles ? customStyles : styles.button}
             onPress={toggleDropdown}
         >
             {renderDropdown()}
-            <Text style={styles.buttonText}>
+            <Text style={selected!== undefined?styles.buttonText:styles.labelStyle}>
                 {(selected && selected.label) || label}
             </Text>
-            <Text>^</Text>
+            <Image style={{ width: 15, height: 15,resizeMode:'contain',position:'absolute',right:10 }} source={require('../assets/down.png')} />
             {/* <Icon type='font-awesome' name='chevron-down'/> */}
         </TouchableOpacity>
     );
@@ -73,31 +81,41 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         height: 40,
         width: '100%',
-        // paddingHorizontal: 10,
         zIndex: 1,
         borderBottomColor: '#bbb',
         borderBottomWidth: 2,
         justifyContent: 'space-between',
+       
     },
     buttonText: {
-       fontSize:16
+        fontSize: 15,
+        width:'80%',
+        textAlign:'left',
+        marginRight:15
+    },
+    labelStyle: {
+        fontSize: 15,
+        width:'80%',
+        textAlign:'left',
+        marginRight:15,
+        color:'#bbb'
     },
     dropdown: {
-        position: 'absolute',
         backgroundColor: '#fff',
         width: '100%',
         shadowColor: '#000000',
         shadowRadius: 4,
         shadowOffset: { height: 4, width: 0 },
         shadowOpacity: 0.5,
+
     },
     item: {
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        borderBottomWidth: 1,
-        //backgroundColor:'#f00',
-        marginHorizontal:15
-      },
+        paddingHorizontal: 15,
+        paddingVertical: 12,
+    },
+    overlay: {
+        backgroundColor: '#f00',
+    }
 });
 
 export default Dropdown;

@@ -72,7 +72,7 @@ const Home = ({navigation}) => {
                     resizeMode={'contain'}
                     /></View>
                    <DropDown label="Select Product" data={fundData} 
-                   onSelect={(item) => setProductValue(item.label)} 
+                   //onSelect={(item) => setProductValue(item.label)} 
                    customStyles={styles.dropDownStyles}
                    modalStyle={styles.dropDownItemStyles}
                  />
@@ -171,5 +171,25 @@ const styles = StyleSheet.create({
           width: 0,
         },
         elevation: 2,
-    }
+    },
+    dropDownItemStyles: {
+        backgroundColor: '#fff',
+        width: '40%',
+        shadowColor: '#000000',
+        shadowRadius: 4,
+        shadowOffset: { height: 4, width: 0 },
+        shadowOpacity: 0.5,
+        borderRadius: 10,
+        right: 38
+      },
+      dropDownStyles: {
+        flexDirection: 'row',
+        width: '50%',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        borderRadius: 10,
+        borderColor: '#000',
+        borderWidth: 1,
+        paddingHorizontal: 0,
+      }
 })
